@@ -11,7 +11,7 @@ const ShoppingCart = ({}: CartProps) => {
 
     useEffect(() => {
         setLoading(true)
-        fetch("./online-store/db.json",{
+        fetch("./db.json",{
             headers : {
                 'Content-Type': 'application/json',
                 'Accept': 'application/json'
