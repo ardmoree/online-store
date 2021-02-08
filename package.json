@@ -23,6 +23,7 @@
     "deploy": "gh-pages -d build",
     "start": "react-scripts start",
     "build": "react-scripts build",
+    "server": "json-server --watch src/db.json",
     "test": "react-scripts test",
     "eject": "react-scripts eject"
   },

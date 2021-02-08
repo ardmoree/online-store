@@ -1,0 +1,14 @@
+.shoppingCart {
+    background-color: #b5b5b5;
+    width: 600px;
+    height: 100%;
+    margin: 10px auto;
+    border-radius: 4px;
+    padding: 15px 10px;
+    display: flex;
+    flex-direction: column;
+}
+
+.header {
+    text-align: center;
+}
