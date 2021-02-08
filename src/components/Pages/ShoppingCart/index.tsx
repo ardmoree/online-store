@@ -7,16 +7,25 @@ type CartProps = {}
 
 const ShoppingCart = ({}: CartProps) => {
     const [data, setData] = useState([])
+    const [loading, setLoading] = useState(false)
 
     useEffect(() => {
-        fetch("http://localhost:5000/items").then(res => res.json()).then((res) => {
-            setData(res)
+        setLoading(true)
+        fetch("./online-store/db.json",{
+            headers : {
+                'Content-Type': 'application/json',
+                'Accept': 'application/json'
+            }
+        }).then(res => res.json()).then((res) => {
+            setData(res.items)
+            setLoading(false)
         })
     }, []);
 
     return (<div className={"shoppingCart"}>
         <h1 className={"header"}>SHOPPING CART</h1>
-        <ItemList items={data}/>
+        {data.length && !loading && <ItemList items={data}/>}
+        {loading && <div>Loading ...</div>}
         <NewItemForm />
     </div>)
 }
