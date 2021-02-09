@@ -1,5 +1,6 @@
 .newItemForm {
-    background-color: #d4d4d4;
-    padding: 10px;
+    background-color: #ffffff;
     border-radius: 4px;
+    max-width: 800px;
+    margin: 70px auto 0 ;
 }

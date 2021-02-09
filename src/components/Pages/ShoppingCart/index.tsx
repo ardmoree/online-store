@@ -2,6 +2,7 @@ import React, {useEffect, useState} from "react"
 import "./style.css"
 import ItemList from "./ItemList";
 import NewItemForm from "./NewItemForm";
+import Checkout from "./Checkout";
 
 type CartProps = {}
 
@@ -11,8 +12,8 @@ const ShoppingCart = ({}: CartProps) => {
 
     useEffect(() => {
         setLoading(true)
-        fetch("./db.json",{
-            headers : {
+        fetch("./db.json", {
+            headers: {
                 'Content-Type': 'application/json',
                 'Accept': 'application/json'
             }
@@ -23,10 +24,14 @@ const ShoppingCart = ({}: CartProps) => {
     }, []);
 
     return (<div className={"shoppingCart"}>
-        <h1 className={"header"}>SHOPPING CART</h1>
-        {data.length && !loading && <ItemList items={data}/>}
+        <div className={"header"}>SHOPPING CART</div>
+        {data.length > 0 && !loading &&
+            <div className={"midSection"}>
+              <ItemList items={data}/>
+              <Checkout />
+            </div>}
         {loading && <div>Loading ...</div>}
-        <NewItemForm />
+        <NewItemForm/>
     </div>)
 }
 
