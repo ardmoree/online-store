@@ -11,6 +11,7 @@ type item = {
     name: string,
     price: number,
     quantity: number
+    pic: string
 }
 
 const ItemList = ({items}: ItemListProps) => {

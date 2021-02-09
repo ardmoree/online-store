@@ -13,7 +13,10 @@ type ItemProps = {
 // }
 
 const Checkout = ({element}: ItemProps) => {
-    return <div className={"checkout"}>123</div>
+    return <div className={"checkout"}>
+        <div className={"checkoutTotal"}>Total: $228</div>
+        <button className={"checkoutButton"}>CHECKOUT</button>
+    </div>
 }
 
 export default Checkout
